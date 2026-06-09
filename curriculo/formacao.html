@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação Acadêmica</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Efeito Moderno de Vidro no Card */
+        .card-custom {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(168, 85, 247, 0.2) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Customização dos itens da lista */
+        .list-group-item-custom {
+            background: rgba(255, 255, 255, 0.03) !important;
+            color: #e2e8f0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            margin-bottom: 8px;
+            border-radius: 8px !important;
+            transition: all 0.2s ease;
+        }
+
+        .list-group-item-custom:hover {
+            background: rgba(168, 85, 247, 0.1) !important;
+            border-color: #a855f7 !important;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5" style="background: #0b0f19 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">
+                Currículo Online
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold text-white" href="formacao.html" style="color: #c084fc !important;">Formação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="habilidades.html">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <div class="card card-custom shadow p-4">
+                    <div class="card-body">
+                        
+                        <h2 class="fw-bold text-white mb-3" style="background: linear-gradient(to right, #000000, #c084fc); -webkit-text-fill-color: transparent text;">
+                            Cursos Concluídos
+                        </h2>
+
+                        <p class="text-light opacity-75 mb-4">
+                            Aqui estão todos os meus cursos concluídos durante o meu desenvolvimento profissional, abrangendo uma variedade de tópicos relacionados à tecnologia e programação. Esses aprendizados me proporcionaram uma base sólida e habilidades práticas que aplico diretamente em meus projetos e desafios diários.
+                        </p>
+
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-custom">HTML5 e CSS3</li>
+                            <li class="list-group-item list-group-item-custom">Bootstrap 5</li>
+                            <li class="list-group-item list-group-item-custom">Java</li>
+                            <li class="list-group-item list-group-item-custom">Banco de Dados Relacional</li>
+                            <li class="list-group-item list-group-item-custom">JavaScript (ES6+)</li>
+                            <li class="list-group-item list-group-item-custom">Lógica de Programação</li>
+                            <li class="list-group-item list-group-item-custom">Desenvolvimento Web Front-End</li>
+                            <li class="list-group-item list-group-item-custom">MySQL</li>
+                            <li class="list-group-item list-group-item-custom">Python</li>
+                            <li class="list-group-item list-group-item-custom">Django Framework</li>
+                            <li class="list-group-item list-group-item-custom">Figma (UI/UX Design)</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-white text-center p-4 mt-5" style="background: rgba(15, 23, 42, 0.9); border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        <h5 class="fw-semibold mb-2">Informações para Contato</h5>
+        <p class="mb-0 text-white-50 small">
+            © 2026 
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Projetos - Nicole da Costa Bispo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Navbar Transparente de Vidro */
+        .navbar {
+            background: rgba(15, 23, 42, 0.977) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.996);
+        }
+
+        /* O Quadrado Principal com a Borda Roxa Iluminada (Glow) */
+        .showcase-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border: 2px solid #a855f7 !important;
+            border-radius: 24px !important;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2) !important;
+            overflow: hidden;
+        }
+
+        /* CONTAINER DA IMAGEM: Mantém o espaço do lado esquerdo fixo e esconde o que passar da borda */
+        .showcase-img-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.15);
+            /* Um fundo bem sutil */
+            overflow: hidden;
+            /* Faz o zoom ficar contido apenas dentro do quadrado dele */
+        }
+
+        /* A IMAGEM EM SI: Começa no tamanho ideal e ganha um leve zoom */
+        .showcase-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Garante que a tela do sistema apareça INTEIRA e sem distorção */
+            padding: 20px;
+            /* Deixa uma margem elegante para não colar na borda roxa */
+
+            /* O POQUINHO DE ZOOM: Deixa ela levemente aproximada por padrão. */
+            transform: scale(1.04);
+
+            /* Transição suave para o efeito não ser seco */
+            transition: transform 0.4s ease-in-out;
+        }
+
+        /* EFEITO EXTRA INTERATIVO: Quando o mouse passa por cima do card, a imagem dá mais um mini zoom */
+        .showcase-card:hover .showcase-img {
+            transform: scale(1.08);
+            /* Sobe de 1.04 para 1.08, aproximando só mais um detalhe */
+        }
+
+        /* Badges de Tecnologia Estilo Tag */
+        .tech-tag {
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #c084fc;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Setas Grandes nas Laterais */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 100%;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-control-prev {
+            left: -10px;
+        }
+
+        .carousel-control-next {
+            right: -10px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* Ícones Grandes para as Setas */
+        .carousel-icon-custom {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #a855f7;
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+            user-select: none;
+        }
+
+        /* Lista de Objetivos e Diferenciais */
+        .spec-list {
+            padding-left: 0;
+            font-size: 0.9rem;
+            list-style: none;
+        }
+
+        .spec-list li {
+            color: #ffffff !important;
+            opacity: 0.9;
+            margin-bottom: 4px;
+        }
+
+        .spec-list li::before {
+            content: "• ";
+            color: #a855f7;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark py-3 shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-5 tracking-tight d-flex align-items-center gap-2" href="index.html">
+                <span
+                    style="background: linear-gradient(to right,); -webkit-text-fill-color: transparent text;">
+                    Currículo Online
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1">
+                    <li class="nav-item"><a class="nav-link px-3 text-white-50" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white-50" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white-50" href="formacao.html">Formação</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white-50" href="habilidades.html">Habilidades</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active fw-medium px-3 text-white"
+                            href="portfolio.html">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-white-50" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-2 text-center">
+        <h1 class="fw-bold display-5 mb-2"
+            style="background: linear-gradient(to right, #040404, #a855f7); -webkit-text-fill-color: transparent text; letter-spacing: -1px;">
+            Portfólio de Projetos
+        </h1>
+        <p class="text-light opacity-75 mx-auto mb-5" style="max-width: 650px;">
+            Explore os detalhes estruturados, escopo e tecnologias de cada projeto meu através da rotação automática.
+        </p>
+    </div>
+
+    <div class="container carousel-container mb-5">
+        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem1.png" alt="Projeto 1" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+1'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Projeto - Carrossel de Imagens</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Projeto focado na estruturação de um painel web interativo para exibição de
+                                    cardápios gourmet. Desenvolvido utilizando as melhores práticas de semântica HTML e
+                                    reaproveitamento de componentes do Bootstrap 5, o sistema implementa uma arquitetura
+                                    modular que separa a galeria de imagens (carrossel) dos dados detalhados (modais),
+                                    garantindo um código limpo, performático e de fácil manutenção.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Componentização estrutural</li>
+                                            <li>Interface intuitiva e limpa</li>
+                                            <li>Experiência visual focada em conversão</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Carrossel interativo integrado</li>
+                                            <li>Janelas modais para detalhes</li>
+                                            <li>Design 100% responsivo para mobile</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem2.png" alt="Projeto 2" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+2'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Projeto - Sistema de Pontos do Aluno Login </h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Um sistema de simulação interativo desenvolvido para replicar a gestão e a
+                                    monitorização de desempenho escolar em tempo real. O foco do projeto foi criar um
+                                    ambiente dinâmico e responsivo onde utilizadores podem simular a atribuição e a
+                                    dedução de pontuações de atividades, oferecendo um controle prático e preciso
+                                    através de uma interface moderna e intuitiva. Este projeto tem um relógio em tempo
+                                    real e salva dados (Contém duas páginas, login e tela principal).
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Simulação de fluxos reais</li>
+                                            <li>Manipulação dinâmica de dados</li>
+                                            <li>Interface limpa e intuitiva</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Cálculo automatizado do total</li>
+                                            <li>Alternador de tema (Modo Escuro)</li>
+                                            <li>Relógio functional em tempo real</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Banco de Dados</span>
+                                    <span class="tech-tag">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem3.png" alt="Projeto 3" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+3'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Projeto - Sistema de Pontos do Aluno Painel</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Painel de Controle do Sistema — Interface principal da simulação, onde são
+                                    gerenciados os pontos e as atividades dos alunos em tempo real de forma totalmente
+                                    fluida e dinâmica.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Cálculo automatizado do total</li>
+                                            <li>Alternador de tema (Modo Escuro)</li>
+                                            <li>Relógio funcional em tempo real</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Carregamento rápido</li>
+                                            <li>Acessibilidade</li>
+                                            <li>Responsividade mobile</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag">HTML5/CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem4.png" alt="Projeto 4" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+4'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Projeto - Lista de Câmbio e Moedas</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Um painel visual e informativo focado na exibição das principais moedas utilizadas
+                                    no comércio global e transações internacionais. O projeto foi estruturado para
+                                    apresentar de forma clara e organizada os códigos de câmbio (como USD e EUR) e seus
+                                    respectivos símbolos monetários.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Organização de dados in Grid</li>
+                                            <li>Alinhamento harmônico de símbolos</li>
+                                            <li>Interface limpa e intuitiva</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Efeito Hover interativo iluminado</li>
+                                            <li>Design 100% responsivo</li>
+                                            <li>Integração total ao modo escuro</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag">HTML5/CSS3</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                    <span class="tech-tag">Design UI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem5.png" alt="Projeto 5" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+5'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Sistema de Gestão - Módulo Login</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Primeira etapa do Sistema Full-Stack de Gestão de Usuários desenvolvido em Python
+                                    com Flask. Esta interface gerencia o fluxo de controle de acesso seguro e
+                                    autenticação, validando de forma dinâmica as credenciais inseridas em relação aos
+                                    registros salvos.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Controle de rotas internas</li>
+                                            <li>Segurança na autenticação</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Feedbacks dinâmicos via Flask</li>
+                                            <li>Código limpo e modular</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Python</span>
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Flask</span>
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Bootstrap
+                                        5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem6.png" alt="Projeto 6" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+6'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Sistema de Gestão - Módulo Cadastro</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Segunda etapa da aplicação integrada, focada no recebimento e estruturação de novos
+                                    perfis. O formulário processa dados completos como Nome, CPF estruturado, Data de
+                                    Nascimento, E-mail e Senhas individuais de maneira ágil.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Captura de dados estruturados</li>
+                                            <li>Processamento de formulários</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Validação automatizada</li>
+                                            <li>Interface responsiva otimizada</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Python</span>
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Flask</span>
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">JSON</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem7.png" alt="Projeto 7" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+7'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Sistema de Gestão - Painel CRUD</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    A terceira etapa conclui o ciclo do sistema com um painel administrativo em tempo
+                                    real. Os dados armazenados em arquivos JSON são listados em uma tabela dinâmica com
+                                    contraste otimizado, permitindo as ações completas de Edição e Exclusão.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Persistência dinâmica estável</li>
+                                            <li>Manipulação de dicionários</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Tabela com efeito Hover limpo</li>
+                                            <li>Gerenciamento total de registros</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Python</span>
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Flask</span>
+                                    <span class="tech-tag"
+                                        style="border-color: #ff007f; color: #ff007f; background: rgba(255,0,127,0.05);">Bootstrap
+                                        5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem8.png" alt="Projeto 8" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+8'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Painel de Componentes Dinâmicos</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Interface interativa desenvolvida para consolidar a aplicação prática e estilização
+                                    customizada de componentes do Bootstrap 5. O projeto simula um painel administrativo
+                                    moderno em modo escuro (Dark Mode), organizando recursos comuns de sistemas
+                                    corporativos — como menus de navegação complexos, elementos de notificações, blocos
+                                    colapsáveis de informação e formulários estruturados para recebimento de dados.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Modularização de componentes UI</li>
+                                            <li>Domínio de estruturas colapsáveis</li>
+                                            <li>Validação visual de formulários</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Estilização Dark/Glow avançada</li>
+                                            <li>Menu responsivo com dropdown</li>
+                                            <li>Componentes modulares limpos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag">HTML5 / CSS3</span>
+                                    <span class="tech-tag">Bootstrap 5</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card showcase-card p-0">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-lg-6 col-md-12 d-flex">
+                                <div class="showcase-img-wrapper w-100">
+                                    <img src="imagens/imagem9.png" alt="Projeto 9" class="showcase-img"
+                                        onerror="this.src='https://placehold.co/600x450/1e1b4b/ffffff?text=Projeto+9'">
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-6 col-md-12 p-4 p-md-5 ps-lg-5 d-flex flex-column justify-content-center">
+                                <h2 class="fw-bold text-white mb-3">Módulo de Relatórios e Gráficos</h2>
+                                <h5 class="text-white-50 mb-2">Descrição</h5>
+                                <p class="text-light opacity-75 small mb-4">
+                                    Interface analítica voltada para a renderização visual de métricas e indicadores de
+                                    desempenho.
+                                    Este módulo processa dados brutos gerados pelas etapas anteriores do ecossistema e
+                                    os converte
+                                    em gráficos limpos e painéis consolidados, facilitando o monitoramento estratégico
+                                    das atividades.
+                                </p>
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Objetivos</h6>
+                                        <ul class="spec-list">
+                                            <li>Visualização clara de dados</li>
+                                            <li>Filtros dinâmicos de período</li>
+                                            <li>Agrupamento inteligente de dados</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="fw-bold text-purple mb-2" style="color: #c084fc;">Diferenciais</h6>
+                                        <ul class="spec-list">
+                                            <li>Renderização assíncrona</li>
+                                            <li>Exportação simples para PDF</li>
+                                            <li>Layout adaptável para tablets</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h5 class="text-white-50 mb-2">Tech Stack</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                    <span class="tech-tag">Bootstrap 5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-icon-custom" aria-hidden="true">&lsaquo;</span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide="next">
+                <span class="carousel-icon-custom" aria-hidden="true">&rsaquo;</span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+    <footer class="text-center p-4 mt-5"
+        style="background: rgba(15, 23, 42, 0.8); border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <p class="mb-0 text-white-50 small">
+            © 2026 
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
